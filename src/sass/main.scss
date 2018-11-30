@@ -1,4 +1,11 @@
+@import "./abstracts/variables";
 
-@import './components/header';
+@import "./base/typography";
 
-@import './vendors/normalise';
+@import "./components/area";
+@import "./components/header";
+
+@import "./pages/playground";
+
+@import "./vendors/bootstrap";
+@import "./vendors/normalise";

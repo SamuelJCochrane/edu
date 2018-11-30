@@ -1,0 +1,19 @@
+.title {
+    font-size: 22px;
+
+    &.xs {
+        font-size: 18px
+    }
+
+    &.s {
+        font-size: 20px;
+    }
+
+    &.l {
+        font-size: 25px;
+    }
+
+    &.xl {
+        font-size: 30px;
+    }
+}

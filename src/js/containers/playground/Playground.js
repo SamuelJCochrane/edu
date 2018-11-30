@@ -1,5 +1,5 @@
 import React from 'react';
-import { Header } from '../../components';
+import { Area, Header } from '../../components';
 
 export default class Playground extends React.PureComponent {
 
@@ -9,8 +9,10 @@ export default class Playground extends React.PureComponent {
                 <Header 
                     title="Chemistry"
                     subtitle="What the fuck is a mole?"
+                    question={10}
+                    totalQuestions={20}
                 />
-                PLAYGROUND
+                <Area />
             </div>
         )
     }
