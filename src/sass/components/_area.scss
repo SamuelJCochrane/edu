@@ -1,0 +1,11 @@
+.area {
+    padding-top: 50px;
+    margin: 20px;
+    flex: 1;
+    border-radius: 8px;
+
+    .question {
+        padding-bottom: 30px;
+        font-size: $heading-size;
+    }
+}

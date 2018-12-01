@@ -6,9 +6,9 @@ export default class Area extends React.PureComponent {
         const {
             question,
             questionSub,
-            answers,
+            children,
         } = this.props;
-        
+
         return (
             <div className="area">
                 <div className="question">
@@ -20,7 +20,7 @@ export default class Area extends React.PureComponent {
                     </div>
                 }
                 <div className="answers">
-                    {answers}
+                    {children}
                 </div>
             </div>
         )
