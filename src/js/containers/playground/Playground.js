@@ -1,6 +1,5 @@
 import React from "react";
-import { Area, Header, SVG } from "../../components";
-import { default as Test } from "../../questions/Test";
+import { Area, Header, Electron, Shell, SVG } from "../../components";
 
 export default class Playground extends React.PureComponent {
     render() {
@@ -15,10 +14,22 @@ export default class Playground extends React.PureComponent {
                     />
                 </div>
                 <div className="page-inner centered">
-                    <Area 
+                    <Area
                         question="Example question"
                     >
-                        <Test />
+                        <SVG
+                            height="500px"
+                            width="500px"
+                            >
+                            <SVG 
+                                className="test rotating-around-center"
+                                x="150px"
+                                y="150px"
+                            >
+                                <Shell />
+                                <Electron />
+                            </SVG>
+                        </SVG>
                     </Area>
                 </div>
             </div>

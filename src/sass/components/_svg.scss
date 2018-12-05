@@ -1,0 +1,20 @@
+.svg {
+
+    &.rotating-around-center {
+        transform: rotate(30deg);
+        background-color: cornflowerblue;
+        animation: rotating-around-center 2s linear infinite;
+    }
+}
+
+.test {
+    background-color: red;
+}
+@keyframes rotating-around-center {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}

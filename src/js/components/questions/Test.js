@@ -1,5 +1,5 @@
 import React from 'react';
-import { SVG } from '../components';
+import { SVG } from '../../components';
 
 export default class Test extends React.PureComponent {
 
