@@ -1,4 +1,5 @@
 import React from 'react';
+import classNames from 'classnames';
 
 export default class SVG extends React.PureComponent {
 
@@ -13,8 +14,13 @@ export default class SVG extends React.PureComponent {
             y,
         } = this.props;
 
+        const classList = classNames({
+            svg: true,
+            [className]: !!className,
+        })
+
         return (
-            <svg className={`svg ${!!className ? className : ''}`} width={width} height={height} x={x} y={y}>
+            <svg className={classList} width={width} height={height} x={x} y={y}>
                 {children}
             </svg>
         )

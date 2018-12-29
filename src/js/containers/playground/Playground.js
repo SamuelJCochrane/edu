@@ -1,14 +1,17 @@
 import React from "react";
-import { Area, Header, Electron, Shell, SVG } from "../../components";
+import { BlockMaths } from "../../typo/katex";
+import { MathsInput } from "../../typo/input";
+import { Area, Header, SVG } from "../../components";
 
 export default class Playground extends React.PureComponent {
+
     render() {
         return (
             <div className="page">
                 <div className="page-header">
                     <Header
-                        title="Chemistry"
-                        subtitle="What the fuck is a mole?"
+                        title="Algebra"
+                        subtitle="Subtitle"
                         question={10}
                         totalQuestions={20}
                     />
@@ -17,19 +20,7 @@ export default class Playground extends React.PureComponent {
                     <Area
                         question="Example question"
                     >
-                        <SVG
-                            height="500px"
-                            width="500px"
-                            >
-                            <SVG 
-                                className="test rotating-around-center"
-                                x="150px"
-                                y="150px"
-                            >
-                                <Shell />
-                                <Electron />
-                            </SVG>
-                        </SVG>
+                        <MathsInput />
                     </Area>
                 </div>
             </div>
