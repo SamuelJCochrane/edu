@@ -1,5 +1,5 @@
 import React from "react";
-import { BlockMaths } from "../../typo/katex";
+import { InlineMaths } from "../../typo/katex";
 import { MathsInput } from "../../typo/input";
 import { Area, Header, SVG } from "../../components";
 
@@ -18,7 +18,7 @@ export default class Playground extends React.PureComponent {
                 </div>
                 <div className="page-inner centered">
                     <Area
-                        question="Example question"
+                        question={<InlineMaths>(a + b) \times 3</InlineMaths>}
                     >
                         <MathsInput />
                     </Area>

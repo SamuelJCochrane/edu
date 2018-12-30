@@ -4,7 +4,9 @@
   "private": true,
   "dependencies": {
     "classnames": "^2.2.6",
+    "jquery": "^3.3.1",
     "katex": "^0.10.0",
+    "mathquill": "^0.10.1-a",
     "node-sass": "^4.10.0",
     "react": "^16.6.3",
     "react-dom": "^16.6.3",
