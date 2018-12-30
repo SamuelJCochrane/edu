@@ -19,12 +19,13 @@ export default class MathsInput extends React.PureComponent {
     componentDidMount() {
         const MQ = window.MathQuill.getInterface(2);
 
-        const mathsInputEl = document.getElementById('maths-input')
+        const mathsInputEl = document.getElementsByClassName('maths-input__input-el')[0];
         const config = {
             supSubsRequireOperand: true,
             maxDepth: 2,
             handlers: {
-                edit: () => {
+                edit: (test) => {
+                    console.log('test', test.latex());
                     this.setState({ latex: this.mathField.latex() })
                     if (this.props.handleChange) {
                         this.props.handleChange(this.mathField.latex())
@@ -32,16 +33,36 @@ export default class MathsInput extends React.PureComponent {
                 },
             }
         }
+        
         this.mathField = MQ.MathField(mathsInputEl, config);
     }
 
     render() {
 
         return (
-            <div className="">
-                <div id="maths-input" />
-                <div>{this.state.latex}</div>
-                <button onClick={() => this.mathField.write('\\sqrt{}')}>One</button>
+            <div className="maths-input">
+                {/* <div>{this.state.latex}</div> */}
+                <div className="maths-input__input-el" />
+                <div className="maths-input__buttons">
+                    <button 
+                        className="maths-input__buttons--sqrt" 
+                        onClick={() => this.mathField.write('\\sqrt{}').focus().keystroke("Left")} 
+                    >
+                        SQRT
+                    </button>
+                    <button 
+                        className="maths-input__buttons--expo" 
+                        onClick={() => this.mathField.write('^{}').focus().keystroke("Left")} 
+                    >
+                        EXPO
+                    </button>
+                    <button 
+                        className="maths-input__buttons--frac" 
+                        onClick={() => this.mathField.write('\\frac{}{}').focus().keystroke("Left").keystroke("Left")} 
+                    >
+                        FRAC
+                    </button>
+                </div>
             </div>
         )
     }

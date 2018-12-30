@@ -18,7 +18,7 @@ export default class Playground extends React.PureComponent {
                 </div>
                 <div className="page-inner centered">
                     <Area
-                        question={<InlineMaths>(a + b) \times 3</InlineMaths>}
+                        question={<React.Fragment><span>Expand </span><InlineMaths>(a + b) \times 3</InlineMaths></React.Fragment>}
                     >
                         <MathsInput />
                     </Area>

@@ -1,5 +1,18 @@
-#maths-input {
-    width: 300px;
-    max-width: 300px;
-    padding: 6px;
+.maths-input {
+
+    &__input-el {
+        width: 300px;
+        max-width: 300px;
+        padding: 6px;
+    }
+
+    &__buttons {
+        padding-top: 5px;
+
+        button {
+            width: 55px;
+            height: 30px;
+            cursor: pointer;
+        }
+    }
 }
