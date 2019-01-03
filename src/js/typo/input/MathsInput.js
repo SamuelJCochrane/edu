@@ -89,6 +89,12 @@ export default class MathsInput extends React.PureComponent {
                     >
                         SUBTRACT
                     </button>
+                    <button 
+                        className="maths-input__buttons--frac" 
+                        onClick={() => this.mathField.write('\\left(\\right)').focus().keystroke("Left")} 
+                    >
+                        {"()"}
+                    </button>
                     <button onClick={() => console.log(this.mathField.__controller.cursor.selection)}>TEST</button>
                     <button 
                         className="maths-input__buttons--submit" 
