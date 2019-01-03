@@ -24,17 +24,20 @@ export default class MathsInput extends React.PureComponent {
             supSubsRequireOperand: true,
             maxDepth: 2,
             handlers: {
-                edit: (test) => {
-                    console.log('test', test.latex());
+                edit: () => {
                     this.setState({ latex: this.mathField.latex() })
                     if (this.props.handleChange) {
                         this.props.handleChange(this.mathField.latex())
                     }
-                },
+                }
             }
         }
         
         this.mathField = MQ.MathField(mathsInputEl, config);
+    }
+
+    handleSubmit = () => {
+        this.props.handleSubmit(this.mathField.latex());
     }
 
     render() {
@@ -42,7 +45,7 @@ export default class MathsInput extends React.PureComponent {
         return (
             <div className="maths-input">
                 {/* <div>{this.state.latex}</div> */}
-                <div className="maths-input__input-el" />
+                <div className="maths-input__input-el"/>
                 <div className="maths-input__buttons">
                     <button 
                         className="maths-input__buttons--sqrt" 
@@ -61,6 +64,37 @@ export default class MathsInput extends React.PureComponent {
                         onClick={() => this.mathField.write('\\frac{}{}').focus().keystroke("Left").keystroke("Left")} 
                     >
                         FRAC
+                    </button>
+                    <button 
+                        className="maths-input__buttons--frac" 
+                        onClick={() => this.mathField.write('\\divide').focus()} 
+                    >
+                        DIVIDE
+                    </button>
+                    <button 
+                        className="maths-input__buttons--frac" 
+                        onClick={() => this.mathField.write('\\times').focus()} 
+                    >
+                        MULTIPLY
+                    </button>
+                    <button 
+                        className="maths-input__buttons--frac" 
+                        onClick={() => this.mathField.write('+').focus()} 
+                    >
+                        ADD
+                    </button>
+                    <button 
+                        className="maths-input__buttons--frac" 
+                        onClick={() => this.mathField.write('-').focus()} 
+                    >
+                        SUBTRACT
+                    </button>
+                    <button onClick={() => console.log(this.mathField.__controller.cursor.selection)}>TEST</button>
+                    <button 
+                        className="maths-input__buttons--submit" 
+                        onClick={this.handleSubmit} 
+                    >
+                        Submit
                     </button>
                 </div>
             </div>

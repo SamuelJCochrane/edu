@@ -7,12 +7,21 @@
     }
 
     &__buttons {
-        padding-top: 5px;
-
+        width: 300px;
+        max-height: 100px;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        
         button {
-            width: 55px;
+            margin-top: 5px;
+            min-width: 95px;
             height: 30px;
             cursor: pointer;
+        }
+
+        &--submit {
+            width: 100%;
         }
     }
 }
