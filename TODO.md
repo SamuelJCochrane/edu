@@ -7,5 +7,4 @@ Math Input Features
 [] Stop input of characters that are not 0-9, a-z, or ();
 
 Thirty Questions
-[] 
- 
+[]  
